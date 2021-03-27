@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Inicio</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button routerLink="/alert">
+        Alert
+    </ion-button>
+    <ion-button routerLink="/action">
+        Action
+    </ion-button>
+
+    <ion-list>
+        <ion-item *ngfor="let pag of pagina" [routerLink]="pag.redirectTo">
+            <ion-icon slot="start" name={{pag.icon}}></ion-icon>
+            {{pag.nombre}}
+        </ion-item>
+    </ion-list>
+</ion-content>
