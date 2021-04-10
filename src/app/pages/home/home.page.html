@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Inicio</ion-title>
+        <ion-title>Home</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -11,11 +11,9 @@
     <ion-button routerLink="/action">
         Action
     </ion-button>
-
     <ion-list>
-        <ion-item *ngfor="let pag of pagina" [routerLink]="pag.redirectTo">
-            <ion-icon slot="start" name={{pag.icon}}></ion-icon>
-            {{pag.nombre}}
+        <ion-item *ngFor="let page of pages" [routerLink]="page.redirectTo" detail>
+            <ion-icon slot="start" name={{page.icon}}></ion-icon> {{page.name}}
         </ion-item>
     </ion-list>
 </ion-content>

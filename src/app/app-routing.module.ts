@@ -3,13 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'alert',
@@ -18,7 +18,7 @@ const routes: Routes = [
   {
     path: 'action',
     loadChildren: () => import('./pages/action/action.module').then( m => m.ActionPageModule)
-  },
+  }
 ];
 
 @NgModule({
